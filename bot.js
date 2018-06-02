@@ -122,7 +122,7 @@ client.on("message", (message) => {
    if (msg.content.includes('/games')) {
    const embed = new Discord.RichEmbed()
    .setAuthor("Server Gamemodes")
-   .addField("You can currently play Factions and Ultra Hardcore")
+   .addField("You can currently play Factions and Ultra Hardcore", "You can find the ip by typing /address")
    .setColor(0x551A8B)
    .setThumbnail("https://cdn.discordapp.com/attachments/433746542747451393/452523047908540416/olympus2.png")
      msg.channel.send({embed})

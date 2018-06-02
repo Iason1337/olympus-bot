@@ -59,7 +59,7 @@ client.on("message", (message) => {
    .addField("/event", "Find information about upcoming events")
    .addField("/address", "Gives you the server address.")
    .addField("/games", "Gives you a list with all the available gamemodes")
-   .addField("/rules"), "Gives you a link to read the server rules")
+   .addField("/rules", "Gives you a link to read the server rules")
    .setColor(0x551A8B)
    .setThumbnail("https://cdn.discordapp.com/attachments/433746542747451393/452523047908540416/olympus2.png")
      msg.channel.send({embed})
@@ -97,7 +97,6 @@ client.on("message", (message) => {
  client.on('message', msg => {
    if (msg.content.includes('/event')) {
    const embed = new Discord.RichEmbed()
-   // .setTitle("Olympus Network")
    .setAuthor("Server Events")
    .addField("There's currently one event", "http://olympusnetwork.eu/discord/event")
    .setColor(0x551A8B)
@@ -110,7 +109,6 @@ client.on("message", (message) => {
  client.on('message', msg => {
    if (msg.content.includes('/address')) {
    const embed = new Discord.RichEmbed()
-   // .setTitle("Olympus Network")
    .setAuthor("Server IP")
    .addField("Play games in this address", "play.olympusnetwork.eu")
    .setColor(0x551A8B)
@@ -123,7 +121,6 @@ client.on("message", (message) => {
  client.on('message', msg => {
    if (msg.content.includes('/games')) {
    const embed = new Discord.RichEmbed()
-   // .setTitle("Olympus Network")
    .setAuthor("Server Gamemodes")
    .addField("You can currently play Factions and Ultra Hardcore")
    .setColor(0x551A8B)
@@ -136,9 +133,8 @@ client.on("message", (message) => {
  client.on('message', msg => {
    if (msg.content.includes('/rules')) {
    const embed = new Discord.RichEmbed()
-   // .setTitle("Olympus Network")
    .setAuthor("Server Rules")
-   .addField("You can read the server rules here", "LINK FOR DA RULES")
+   .addField("You can read the server rules here", "https://goo.gl/UdShBM")
    .setColor(0x551A8B)
    .setThumbnail("https://cdn.discordapp.com/attachments/433746542747451393/452523047908540416/olympus2.png")
      msg.channel.send({embed})
@@ -147,5 +143,5 @@ client.on("message", (message) => {
  });
 
 
- client.login(process.env.BOT_TOKEN);
-//client.login('NDUyNTIzNDgxNDUyNjQyMzE2.DfRk3g.t7-75Cm447wr1aeaxu7tjtPrTkM');
+client.login(process.env.BOT_TOKEN);
+//client.login('NDUyNTIzNDgxNDUyNjQyMzE2.DfRyWg.R8K8Jn1x9NGA7nELvPkz2H7b5Bs');

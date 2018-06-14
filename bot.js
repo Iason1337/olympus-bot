@@ -179,14 +179,6 @@ client.on("message", (message) => {
        message.delete(2);     
        message.channel.send(message.content.slice(5, message.content.length));
     }
-    if (message.content.startsWith("l")) {
-       message.delete(2);     
-       message.channel.send(message.content.slice(5, message.content.length));
-    }
-    if (message.content.startsWith("lamda")) {
-       message.delete(2);     
-       message.channel.send(message.content.slice(5, message.content.length));
-    }
     if (message.content.startsWith("malaka")) {
        message.delete(2);     
        message.channel.send(message.content.slice(5, message.content.length));

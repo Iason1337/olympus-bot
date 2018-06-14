@@ -142,5 +142,68 @@ client.on("message", (message) => {
 
  });
 
+ client.on("message", async message => {
+    if (message.content.startsWith("ez")) {
+       message.delete(2);     
+       message.channel.send(message.content.slice(5, message.content.length));
+    }
+    if (message.content.startsWith("eZ")) {
+       message.delete(2);     
+       message.channel.send(message.content.slice(5, message.content.length));
+    }
+    if (message.content.startsWith("poustopaido")) {
+       message.delete(2);     
+       message.channel.send(message.content.slice(5, message.content.length));
+    }
+    if (message.content.startsWith("pousti")) {
+       message.delete(2);     
+       message.channel.send(message.content.slice(5, message.content.length));
+    }
+    if (message.content.startsWith("malakismene")) {
+       message.delete(2);     
+       message.channel.send(message.content.slice(5, message.content.length));
+    }
+    if (message.content.startsWith("EZ")) {
+       message.delete(2);     
+       message.channel.send(message.content.slice(5, message.content.length));
+    }
+    if (message.content.startsWith("Ez")) {
+       message.delete(2);     
+       message.channel.send(message.content.slice(5, message.content.length));
+    }
+    if (message.content.startsWith("E.Z")) {
+       message.delete(2);     
+       message.channel.send(message.content.slice(5, message.content.length));
+    }
+    if (message.content.startsWith("L")) {
+       message.delete(2);     
+       message.channel.send(message.content.slice(5, message.content.length));
+    }
+    if (message.content.startsWith("l")) {
+       message.delete(2);     
+       message.channel.send(message.content.slice(5, message.content.length));
+    }
+    if (message.content.startsWith("lamda")) {
+       message.delete(2);     
+       message.channel.send(message.content.slice(5, message.content.length));
+    }
+    if (message.content.startsWith("malaka")) {
+       message.delete(2);     
+       message.channel.send(message.content.slice(5, message.content.length));
+    }
+    if (message.content.startsWith("gamisou")) {
+       message.delete(2);     
+       message.channel.send(message.content.slice(5, message.content.length));
+    }
+    if (message.content.startsWith("bastarde")) {
+       message.delete(2);     
+       message.channel.send(message.content.slice(5, message.content.length));
+    }
+    if (message.content.startsWith("mlk")) {
+       message.delete(2);     
+       message.channel.send(message.content.slice(5, message.content.length));
+    }
+ });
+
 
 client.login(process.env.BOT_TOKEN);

@@ -76,6 +76,11 @@ client.on('ready', () => {
    .setThumbnail("https://cdn.discordapp.com/attachments/433746542747451393/452523047908540416/olympus2.png")
      msg.channel.send({embed})
    }
+
+ });
+
+
+client.on("message", async message =>{
     if (message.author.bot) return;
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0].toLowerCase();
@@ -86,6 +91,7 @@ client.on('ready', () => {
       return message.author.send("This channel is only for suggestions. To suggest something type catcher suggest <your suggestion> ")
     } if (args===""){
       return message.delete()
+    //   message.author.send("please provide a suggestion after the !suggest command")
     }
     message.delete();
     const like = message.guild.emojis.find('name', 'agree');

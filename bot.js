@@ -75,6 +75,7 @@ client.on('ready', () => {
    .setColor(0x551A8B)
    .setThumbnail("https://cdn.discordapp.com/attachments/433746542747451393/452523047908540416/olympus2.png")
      msg.channel.send({embed})
+   }
     if (message.author.bot) return;
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0].toLowerCase();

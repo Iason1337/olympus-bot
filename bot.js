@@ -143,5 +143,33 @@ client.on("message", (message) => {
  });
 
 
+client.on("message", async message =>{
+    if (message.author.bot) return;
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0].toLowerCase();
+  let args = messageArray.slice(1);
+    if(message.channel === message.guild.channels.find("name","polls") || cmd==="!poll"){
+    if(message.content.includes("poll")!==true){
+      message.delete()
+      return message.author.send("This channel is only for suggestions. To suggest something type !poll <your poll> ")
+    } if (args===""){
+      return message.delete()
+    //   message.author.send("please provide a suggestion after the !suggest command")
+    }
+    message.delete();
+    const like = message.guild.emojis.find('name', 'agree');
+    const dislike = message.guild.emojis.find('name', 'disagree');
+    let suggestEmbed = new Discord.RichEmbed()
+    .setAuthor(message.author.username, message.author.displayAvatarURL)
+    .addField("Suggestion",args.join(" "))
+    .setColor("0x004bbc")
+    message.channel.send(suggestEmbed)
+    .then(message =>message.react(like) + message.react(dislike))
+    message.author.send("Thank you for your suggestion")
+  }
+});
+
+
+
 
 client.login(process.env.BOT_TOKEN);

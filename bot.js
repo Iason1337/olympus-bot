@@ -9,48 +9,10 @@ client.on('ready', () => {
     client.user.setPresence( { game: {name: 'play.olympusnetwork.eu', type: 0 }});
 });
 
-client.on('message', message => {
-    if(message.author.bot) return;
-    else if (message.member.hasPermission("MANAGE_MESSAGES")) return;
-    var re =  /[-a-zA-Z0-9@:%_\+.~#?&  =]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&  =]*)?/gi.exec(message.cleanContent);
-    if(re != null){
-        message.delete().then(message => {
-            message.author.send('Sorry, you cannot include links in your messages');
-        });
-    }
-});
-
-client.on("message", (message) => {
-     if (message.content.startsWith("/kick")) {
-         if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":x: Access denied!")
-         var member= message.mentions.members.first();
-         member.kick().then((member) => {
-             message.channel.send(":thumbsup: " + member.displayName + " has been successfully kicked");
-         }).catch(() => {
-             message.channel.send("Sorry I can't kick this person!");
-         });
-
-     }
-
- });
-
-client.on("message", (message) => {
-     if (message.content.startsWith("/ban")) {
-         if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(":x: Access denied!")
-         var member= message.mentions.members.first();
-         member.ban().then((member) => {
-             message.channel.send(":thumbsup: " + member.displayName + " has been successfully banned");
-         }).catch(() => {
-             message.channel.send("Sorry I can't ban this person!");
-         });
-
-     }
-
- });
-
 
  client.on('message', msg => {
-   if (msg.content.includes('/help')) {
+
+    if (msg.content.includes('/help')) {
    const embed = new Discord.RichEmbed()
    // .setTitle("Olympus Network")
    .setAuthor("Available commands")
@@ -64,12 +26,7 @@ client.on("message", (message) => {
    .setThumbnail("https://cdn.discordapp.com/attachments/433746542747451393/452523047908540416/olympus2.png")
      msg.channel.send({embed})
    }
-
- });
-
-
- client.on('message', msg => {
-   if (msg.content.includes('/store')) {
+    if (msg.content.includes('/store')) {
    const embed = new Discord.RichEmbed()
    // .setTitle("Olympus Network")
    .setAuthor("Server Store")
@@ -78,11 +35,7 @@ client.on("message", (message) => {
    .setThumbnail("https://cdn.discordapp.com/attachments/433746542747451393/452523047908540416/olympus2.png")
      msg.channel.send({embed})
    }
-
- });
-
- client.on('message', msg => {
-   if (msg.content.includes('/discord')) {
+    if (msg.content.includes('/discord')) {
    const embed = new Discord.RichEmbed()
    // .setTitle("Olympus Network")
    .setAuthor("Server Discord")
@@ -91,11 +44,7 @@ client.on("message", (message) => {
    .setThumbnail("https://cdn.discordapp.com/attachments/433746542747451393/452523047908540416/olympus2.png")
      msg.channel.send({embed})
    }
-
- });
-
- client.on('message', msg => {
-   if (msg.content.includes('/event')) {
+    if (msg.content.includes('/event')) {
    const embed = new Discord.RichEmbed()
    .setAuthor("Server Events")
    .addField("There's currently one event", "http://olympusnetwork.eu/discord/event")
@@ -103,11 +52,7 @@ client.on("message", (message) => {
    .setThumbnail("https://cdn.discordapp.com/attachments/433746542747451393/452523047908540416/olympus2.png")
      msg.channel.send({embed})
    }
-
- });
-
- client.on('message', msg => {
-   if (msg.content.includes('/address')) {
+    if (msg.content.includes('/address')) {
    const embed = new Discord.RichEmbed()
    .setAuthor("Server IP")
    .addField("Play games in this address", "play.olympusnetwork.eu")
@@ -115,11 +60,7 @@ client.on("message", (message) => {
    .setThumbnail("https://cdn.discordapp.com/attachments/433746542747451393/452523047908540416/olympus2.png")
      msg.channel.send({embed})
    }
-
- });
-
- client.on('message', msg => {
-   if (msg.content.includes('/games')) {
+    if (msg.content.includes('/games')) {
    const embed = new Discord.RichEmbed()
    .setAuthor("Server Gamemodes")
    .addField("You can currently play Factions and Ultra Hardcore", "You can find the ip by typing /address")
@@ -127,10 +68,6 @@ client.on("message", (message) => {
    .setThumbnail("https://cdn.discordapp.com/attachments/433746542747451393/452523047908540416/olympus2.png")
      msg.channel.send({embed})
    }
-
- });
-
- client.on('message', msg => {
    if (msg.content.includes('/rules')) {
    const embed = new Discord.RichEmbed()
    .setAuthor("Server Rules")

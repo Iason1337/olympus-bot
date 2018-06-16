@@ -148,10 +148,10 @@ client.on("message", async message =>{
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0].toLowerCase();
   let args = messageArray.slice(1);
-    if(message.channel === message.guild.channels.find("name","polls") || cmd==="!poll"){
-    if(message.content.includes("poll")!==true){
+    if(message.channel === message.guild.channels.find("name","polls") || cmd==="!suggest"){
+    if(message.content.includes("suggest")!==true){
       message.delete()
-      return message.author.send("This channel is only for suggestions. To suggest something type !poll <your poll> ")
+      return message.author.send("This channel is only for suggestions. To suggest something type catcher suggest <your suggestion> ")
     } if (args===""){
       return message.delete()
     //   message.author.send("please provide a suggestion after the !suggest command")
